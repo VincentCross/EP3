@@ -1,0 +1,18 @@
+--Appears to be a global variable.
+Server():setValue("<name>", <value>)
+
+--Can be updated to record kill count.
+function WormholeGuardian.onDestroyed()
+    Server():setValue("guardian_respawn_time", 60 * 60)
+end
+
+
+--https://avorion-modding.fandom.com/wiki/Galaxy_(Server)
+--Determines if there is a faction there.
+getLocalFaction(int x, int y)
+--Check if the sector exists in the database. May not be necessary if I'm wanting to force creation.
+sectorExists(int x, int y) 
+--Get player count.
+getOnlinePlayerNames() 
+
+
