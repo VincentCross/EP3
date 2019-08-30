@@ -16,3 +16,17 @@ getLocalFaction(int x, int y)
 sectorExists(int x, int y) 
 --Get player count.
 getOnlinePlayerNames() 
+
+
+
+Avorion does not support galaxy wide events, so gonna have to fake it by doing the following:
+
+Create a server variable indicating whether an extermination fleet event is currently in progress.
+Create a server variable reporting the last time (using apptime()) that an extermination fleet event ended.
+Create player event. I know player events can occur in different sectors as it happens for distress calls.
+The player event will check to see if an extermination fleet event is currently in progress. If it isn't, check how long it's been since the last one. If this is longer than the minimum wait, create an event for that player.
+Theoretically the event should be able to also transmit messages to other players, giving them the location.
+
+Questions:
+Will the event be able to load and run without the player it was given to jumping in? Theoretically the distress call event is built to wait for the player to jump in using an enter sector callback of some sort.
+I may just be able to bypass that and load the sector so it is running and things are getting destroyed.

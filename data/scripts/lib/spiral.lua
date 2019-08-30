@@ -8,13 +8,13 @@ include("callable")
 function Spiral.initialize()
 	local player = Player()
     player:registerCallback("onShowGalaxyMap", "handlePrintSpiral")
-	eprint("Registered Callback onShowGalaxyMap")
+	--eprint("Registered Callback onShowGalaxyMap")
 end
 
 
 function Spiral.handlePrintSpiral()
 	eprint("Running handlePrintSpiral")
-	Spiral.printSpiral(10,10)
+	--Spiral.printSpiral(10,10)
 end
 
 function Spiral.printSpiral(endingRow, endingColumn)
