@@ -6,6 +6,8 @@ function WormholeGuardian.onDestroyed()
     Server():setValue("guardian_respawn_time", 60 * 60)
 end
 
+getValue(string key) 
+
 
 --https://avorion-modding.fandom.com/wiki/Galaxy_(Server)
 --Determines if there is a faction there.
@@ -14,5 +16,3 @@ getLocalFaction(int x, int y)
 sectorExists(int x, int y) 
 --Get player count.
 getOnlinePlayerNames() 
-
-
